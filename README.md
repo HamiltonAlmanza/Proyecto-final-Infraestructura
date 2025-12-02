@@ -13,7 +13,7 @@
 | **David Flores Padilla** | Base de Datos Maestro y Esclavo | [DavidFloresPadilla](https://github.com/DavidFloresPadilla) · elflores43@gmail.com |
 | **Hamilton Randall Almanza Castro** | Servidor de Backups | [HamiltonAlmanza](https://github.com/HamiltonAlmanza) · hac.0000009@gmail.com |
 | **Cristhian Daniel Mamani Morales** | Servidor Web 1 y Servidor Web 2 | [danielecrac736](https://github.com/danielecrac736) · danielelcrac736@gmail.com |
-| **Mateo Gabriel Villegas Arancibia** | Balanceador y Servidor de Grafana | [MatVan23](https://github.com/MatVan23) · mateorito1@gmail.com |
+| **Mateo Gabriel Villegas Arancibia** | Balanceador  | [MatVan23](https://github.com/MatVan23) · mateorito1@gmail.com |
 
 ## I. Objetivo del Proyecto
 El objetivo principal de este proyecto es crear un sistema que realice respaldos de manera automática, evitando que la información se pierda si ocurre algún problema en el servidor.  
@@ -26,7 +26,6 @@ En pocas palabras, lo que buscamos es tener un sistema más seguro, más confiab
 Este proyecto es importante porque ayuda a que la información y los servicios no se pierdan ni se detengan ante una falla, un apagón o un error del sistema.  
 En una infraestructura universitaria o empresarial, la pérdida de datos puede afectar clases, trámites, investigaciones o incluso procesos administrativos completos, por lo que contar con respaldos automáticos y monitoreo constante se vuelve indispensable.  
 La implementación de este sistema reduce el riesgo de que todo dependa de un solo servidor (el famoso Single Point of Failure) y mejora la continuidad operacional, ya que aunque uno falle, la información sigue estando disponible gracias a los respaldos y al monitoreo.  
-Grafana además permite ver el estado de los equipos en tiempo real, lo que hace más rápido detectar y solucionar fallos antes de que se vuelvan un problema mayor.
 
 ---
 
@@ -39,7 +38,6 @@ Grafana además permite ver el estado de los equipos en tiempo real, lo que hace
 | **Nginx (Tecnología 1)** | Se usó como punto central para recibir solicitudes, servir como proxy y mejorar la forma en que se entregan los servicios. |
 | **PostgreSQL (Tecnología 2)** | Base de datos principal con estructura Maestro–Esclavo para mantener una copia idéntica de la información y protegerla contra fallos. |
 | **Bash/Scripting automático (Tecnología 4)** | Se utilizaron scripts para generar respaldos sin depender de una persona, lo que hace que el sistema trabaje solo. |
-| **Grafana (Tecnología 5)** | Permite ver gráficas y métricas del sistema, como consumo de recursos, estado del servidor y actividad en tiempo real. |
 
 > En conjunto, estas tecnologías permiten crear un entorno con respaldos automáticos y monitoreo constante, ideal para una universidad donde la información no puede perderse.
 
@@ -55,7 +53,6 @@ Grafana además permite ver el estado de los equipos en tiempo real, lo que hace
 | 🟢 **Optimización y Servicios Web (T3/T4)** | Los servicios fueron organizados para que respondan de manera más fluida, permitiendo que el sistema crezca con el tiempo. |
 | 🟢 **Seguridad y Hardening (T5)** | Se configuraron reglas de firewall (UFW) para limitar el acceso solo a los puertos necesarios y proteger la información sensible. |
 | 🟢 **Automatización (T6)** | Los respaldos se ejecutan solos con scripts Bash, reduciendo trabajo manual y evitando errores humanos. |
-| 🟢 **Monitoreo de Infraestructura (T4/T1)** | Grafana muestra en gráficos el estado del sistema, permitiendo detectar problemas antes de que afecten a estudiantes o personal administrativo. |
 
 ---
 
@@ -68,10 +65,9 @@ Grafana además permite ver el estado de los equipos en tiempo real, lo que hace
 | VM-WEB1 | Servidor Web 1 | 172.20.10.4 | N/A | Red 10 | Ubuntu 24.04 |
 | VM-WEB2 | Servidor Web 2 | 172.20.10.10 | N/A | Red 10 | Ubuntu 24.04 |
 | VM-BAL | Balanceador / Punto de Entrada | 172.20.10.5 | N/A | Red 15 | Ubuntu 24.04 |
-| VM-GRAFANA | Monitoreo (Grafana) | (pendiente) | N/A | Red 15 | Ubuntu 24.04 |
 | VM-DB-M | Base de Datos Maestro | 172.20.10.6 | N/A | Red 20 | Ubuntu 24.04 |
 | VM-DB-S | Base de Datos Esclavo | 172.20.10.7 | N/A | Red 20 | Ubuntu 24.04 |
-| VM-BACKUP | Servidor de Copias | (pendiente) | N/A | Red 25 | Ubuntu 24.04 |
+| VM-BACKUP | Servidor de Copias | 172.20.10.14 | N/A | Red 25 | Ubuntu 24.04 |
 
 ---
 
@@ -105,7 +101,6 @@ A continuación se describen los pasos esenciales para replicar todo el sistema,
 - Instalar en 3 VMs la base de datos Postgres.
 - Instalar en 2 VMs servidores con Node.js.
 - Instalar en 1 VM el balanceador de cargas con Nginx.
-- Instalar en 1 VM Prometheus + Grafana para monitoreo.
 
 **Configuración:**  
 - Entrar a cd /var/www/app/ 
