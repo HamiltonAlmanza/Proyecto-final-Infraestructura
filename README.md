@@ -59,6 +59,8 @@ Grafana además permite ver el estado de los equipos en tiempo real, lo que hace
 
 ---
 
+## III. IV. Diseño de la Infraestructura y Topología
+
 ### 4.1 Diseño Esquemático
 
 | VM/Host | Rol | IP Física | IP Virtual | Red Lógica | SO |
@@ -163,7 +165,7 @@ Estos archivos forman parte esencial del sistema e incluyen:
 - Configuración del balanceador HAProxy  
 - Ediciones realizadas mediante nano en cada servidor
 
-## ⚠️ VI. Pruebas y Validación
+## VI. Pruebas y Validación
 
 A continuación se presentan las pruebas realizadas al sistema, junto con lo que se esperaba obtener y el resultado obtenido durante las pruebas.
 
@@ -175,7 +177,7 @@ A continuación se presentan las pruebas realizadas al sistema, junto con lo que
 | **Ejecución del Script del Servidor Web** | El script debe crear la aplicación, instalar dependencias y generar los archivos necesarios. | OK |
 | **Renderizado del Formulario HTML** | El formulario debe visualizarse correctamente desde el navegador. | OK |
 
-## 📚 VII. Conclusiones y Lecciones Aprendidas
+## VII. Conclusiones y Lecciones Aprendidas
 
 Este proyecto nos ayudó a entender mejor cómo funciona un sistema real donde varias máquinas trabajan juntas. Pudimos ver de primera mano lo importante que es tener respaldos automáticos, ya que cualquier falla o caída puede dejar sin servicio a un montón de personas si no hay una copia funcionando.
 
