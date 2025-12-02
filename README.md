@@ -89,7 +89,7 @@ A continuación se describen los pasos esenciales para replicar todo el sistema,
 
 ### 5.1. Pre-requisitos
 
-- 7 VMs con Ubuntu 24.04 y acceso root/sudo con el servicio de SSH activo.  
+- 6 VMs con Ubuntu 24.04 y acceso root/sudo con el servicio de SSH activo.  
 - Repositorio Git clonado en cada VM.  
 - Conexión entre todas las máquinas virtuales dentro de la misma red o redes internas configuradas.
 
@@ -98,9 +98,10 @@ A continuación se describen los pasos esenciales para replicar todo el sistema,
 ### 5.2. Despliegue (Ejecución de la Automatización)
 
 **Instalación:**
-- Instalar en 3 VMs la base de datos Postgres.
+- Instalar en 2 VMs la base de datos Postgres.
 - Instalar en 2 VMs servidores con Node.js.
 - Instalar en 1 VM el balanceador de cargas con Nginx.
+- Instalar en 1 VM el backup
 
 **Configuración:**  
 - Entrar a cd /var/www/app/ 
